@@ -1,4 +1,5 @@
 PYTHON_VERSION="anaconda3-5.1.0"
+RUBY_VERSION="2.5.1"
 
 if [ ! -e "$HOME/.pyenv" ]; then
     curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
@@ -11,10 +12,19 @@ if [ ! -e "$HOME/.pyenv" ]; then
     pyenv rehash
 fi
 
-if [ ! -e "$HOME/.cache/dein" ]; then
-    for file in $vim_files; do
-        cp -r .config "$HOME/.config"
-    done
+if [ ! -e "$HOME/.rbenv" ]; then
+    git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    source ~/.bash_profile
+    rbenv install $RUBY_VERSION
+    rbenv global $RUBY_VERSION
+    rbenv rehash
+fi
+
+if [ ! -e "$HOME/.config/nvim" ]; then
+    cp -r .config "$HOME/.config"
 fi
     
 
