@@ -6,8 +6,8 @@ if [ ! -e "$HOME/.pyenv" ]; then
     echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
     echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
     source ~/.bash_profile
-    pyenv install $python_version
-    pyenv global $python_version
+    pyenv install $PYTHON_VERSION
+    pyenv global $PYTHON_VERSION
     pyenv rehash
 fi
 
