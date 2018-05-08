@@ -28,3 +28,11 @@ if [ ! -e "$HOME/.config/nvim" ]; then
 fi
     
 
+
+if [ ! -e "$HOME/.zshrc" ]; then
+    curl -L git.io/antigen > $HOME/.antigen.zsh
+    cp -p .zshrc "$HOME/.zshrc" 
+    source .zshrc
+fi
+
+
