@@ -3,7 +3,7 @@
 
 # インストール方法
 ```
-$ ./install.sh
+$ source ./install.sh
 ```
 
 # 対応OS
