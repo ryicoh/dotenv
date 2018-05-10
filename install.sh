@@ -24,14 +24,15 @@ if [ ! -e "$HOME/.rbenv" ]; then
 fi
 
 if [ ! -e "$HOME/.config/nvim" ]; then
-    cp -r .config "$HOME/.config"
+    cp -r .config/ $HOME/.config/
+else
 fi
     
 
 
 if [ ! -e "$HOME/.zshrc" ]; then
     curl -L git.io/antigen > $HOME/.antigen.zsh
-    cp -p .zshrc "$HOME/.zshrc" 
+    cp .zshrc $HOME/.zshrc
     source .zshrc
 fi
 
